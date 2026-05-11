@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Yura Volontir — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: A4; margin: 24mm 22mm 20mm 22mm; }
+    body {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        color: #1b1c1c;
+        font-size: 11pt;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* HERO */
+    .hero { display: flex; gap: 32px; align-items: flex-start; margin-bottom: 24px; padding-bottom: 20px; }
+    .hero-photo { width: 100px; height: 100px; border-radius: 14px; object-fit: cover; flex-shrink: 0; }
+    .hero-content { flex: 1; }
+    .hero-label { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: #943319; margin-bottom: 8px; }
+    .hero-name { font-family: 'DM Serif Display', serif; font-size: 24pt; line-height: 1.1; margin-bottom: 10px; }
+    .hero-title { font-style: italic; color: #57423d; font-size: 10.5pt; margin-bottom: 10px; line-height: 1.5; }
+    .hero-summary { color: #57423d; font-size: 9.5pt; line-height: 1.65; margin-bottom: 12px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .hero-tag { padding: 3px 12px; border: 1px solid #dec0b9; border-radius: 100px; font-size: 8pt; font-weight: 500; color: #57423d; }
+    .hero-contact { display: flex; flex-wrap: wrap; gap: 18px; font-size: 9pt; }
+    .hero-contact a { color: #57423d; text-decoration: none; }
+    .divider { width: 100%; height: 1px; background: #dec0b9; margin: 0 0 24px 0; }
+
+    /* SECTIONS */
+    .section { margin-bottom: 24px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .section-number { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; color: #943319; letter-spacing: 0.1em; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 15pt; }
+    .section-line { flex: 1; height: 1px; background: #dec0b9; opacity: 0.5; }
+
+    /* EDUCATION */
+    .edu-card {
+        border: 1px solid #dec0b9; border-radius: 12px; padding: 20px 24px;
+        position: relative; overflow: hidden; page-break-inside: avoid;
+    }
+    .edu-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #943319, #6b4a2e); border-radius: 4px 0 0 4px; }
+    .edu-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .edu-school { font-family: 'DM Serif Display', serif; font-size: 13pt; margin-bottom: 4px; }
+    .edu-degree { color: #943319; font-weight: 500; font-size: 10pt; margin-bottom: 8px; }
+    .edu-detail { color: #57423d; font-size: 9.5pt; line-height: 1.6; }
+    .edu-date { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; color: #943319; background: #ffdbd2; padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .skill-group { border: 1px solid #dec0b9; border-radius: 10px; padding: 16px 18px; page-break-inside: avoid; }
+    .skill-group-name { font-family: 'DM Serif Display', serif; font-size: 10pt; margin-bottom: 10px; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .skill-chip { font-size: 7.5pt; font-weight: 500; padding: 3px 8px; border-radius: 5px; background: #fbf9f8; border: 1px solid #dec0b9; color: #57423d; }
+
+    /* PROJECTS */
+    .project-card { border: 1px solid #dec0b9; border-radius: 12px; padding: 20px 24px; page-break-inside: avoid; }
+    .project-name { font-family: 'DM Serif Display', serif; font-size: 12pt; margin-bottom: 8px; }
+    .project-name a { color: #1b1c1c; text-decoration: none; }
+    .project-desc { color: #57423d; font-size: 9.5pt; line-height: 1.55; margin-bottom: 10px; }
+    .project-desc a { color: #943319; text-decoration: none; font-weight: 500; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tech span { font-family: 'JetBrains Mono', monospace; font-size: 7pt; padding: 3px 10px; border-radius: 100px; background: #ffdbd2; color: #83260d; font-weight: 600; letter-spacing: 0.02em; }
+    .project-links { margin-top: 12px; display: flex; gap: 16px; font-size: 8.5pt; }
+    .project-links a { color: #943319; text-decoration: none; font-weight: 500; }
+
+    /* CERTS & LANGUAGES */
+    .extras-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { border: 1px solid #dec0b9; border-radius: 12px; padding: 18px 22px; page-break-inside: avoid; }
+    .card-title { font-family: 'DM Serif Display', serif; font-size: 11pt; margin-bottom: 12px; }
+    .cert-name { font-weight: 500; font-size: 10pt; margin-bottom: 4px; }
+    .cert-issuer { color: #57423d; font-size: 9pt; margin-bottom: 8px; }
+    .cert-badge { font-family: 'JetBrains Mono', monospace; font-size: 7pt; color: #474745; background: #e4e2df; padding: 3px 10px; border-radius: 100px; }
+    .lang-list { list-style: none; }
+    .lang-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #dec0b9; font-size: 9.5pt; }
+    .lang-list li:last-child { border-bottom: none; }
+    .lang-name { font-weight: 500; }
+    .lang-level { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; color: #57423d; text-transform: uppercase; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+    <!-- HERO -->
+    <div class="hero">
+        <img src="assets/img/Yura.png" alt="Yura Volontir" class="hero-photo"/>
+        <div class="hero-content">
+            <div class="hero-label">Software Engineer</div>
+            <h1 class="hero-name">Yura Volontir</h1>
+            <p class="hero-title">Software Engineering Student at Ruppin College (Machon Atid) — building full-stack applications with React, Node.js, C#, and AI/ML</p>
+            <p class="hero-summary">Software engineering student with hands-on experience in web development, Android apps, database design, neural networks, and RAG systems. Passionate about building clean, functional software and exploring the intersection of AI and user experience.</p>
+            <div class="hero-tags">
+                <span class="hero-tag">React</span>
+                <span class="hero-tag">Node.js</span>
+                <span class="hero-tag">C# / .NET</span>
+                <span class="hero-tag">SQL Server</span>
+                <span class="hero-tag">Android</span>
+                <span class="hero-tag">Python</span>
+                <span class="hero-tag">AI / ML</span>
+            </div>
+            <div class="hero-contact">
+                <a href="mailto:yuravolontir@gmail.com">✉ yuravolontir@gmail.com</a>
+                <a href="tel:+972534352832">☎ 053-4352832</a>
+                <a href="https://linkedin.com/in/yura-volontir-8790a4362/">LinkedIn</a>
+                <a href="https://github.com/Yuravolontir">GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">Education</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="edu-card">
+            <div class="edu-top">
+                <div>
+                    <div class="edu-school">Ruppin College (Machon Atid)</div>
+                    <div class="edu-degree">Software Engineering — Practical Engineer</div>
+                    <div class="edu-detail">Full-stack web development (React, Node.js, Express), C# / .NET ecosystem, Android development, database design &amp; administration (SQL Server, MongoDB), AI/ML (neural networks, NLP, RAG with LangChain), OOP, data structures &amp; algorithms, systems analysis, and cybersecurity.</div>
+                </div>
+                <span class="edu-date">2024 – 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <div class="skill-group-name">Languages</div>
+                <div class="skill-chips">
+                    <span class="skill-chip">C#</span>
+                    <span class="skill-chip">JavaScript ES6+</span>
+                    <span class="skill-chip">TypeScript</span>
+                    <span class="skill-chip">Python</span>
+                    <span class="skill-chip">Java</span>
+                    <span class="skill-chip">SQL (T-SQL)</span>
+                    <span class="skill-chip">HTML5</span>
+                    <span class="skill-chip">CSS3</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-name">Frontend</div>
+                <div class="skill-chips">
+                    <span class="skill-chip">React 19</span>
+                    <span class="skill-chip">JSX</span>
+                    <span class="skill-chip">Craft.js</span>
+                    <span class="skill-chip">Tailwind CSS</span>
+                    <span class="skill-chip">Material UI</span>
+                    <span class="skill-chip">WinForms</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-name">Backend</div>
+                <div class="skill-chips">
+                    <span class="skill-chip">Node.js</span>
+                    <span class="skill-chip">Express.js</span>
+                    <span class="skill-chip">REST API</span>
+                    <span class="skill-chip">.NET 8</span>
+                    <span class="skill-chip">CRUD</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-name">Databases</div>
+                <div class="skill-chips">
+                    <span class="skill-chip">SQL Server</span>
+                    <span class="skill-chip">MongoDB</span>
+                    <span class="skill-chip">ChromaDB</span>
+                    <span class="skill-chip">ER Diagrams</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-name">AI &amp; ML</div>
+                <div class="skill-chips">
+                    <span class="skill-chip">Neural Networks</span>
+                    <span class="skill-chip">NLP</span>
+                    <span class="skill-chip">RAG</span>
+                    <span class="skill-chip">LangChain</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-name">Tools</div>
+                <div class="skill-chips">
+                    <span class="skill-chip">Git / GitHub</span>
+                    <span class="skill-chip">VS Code</span>
+                    <span class="skill-chip">Vite</span>
+                    <span class="skill-chip">Netlify</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="project-card">
+            <div class="project-name"><a href="https://github.com/Yuravolontir/WebBuildReactExam">Visual Website Builder</a></div>
+            <div class="project-desc">Full-stack drag-and-drop website builder with a visual editor powered by Craft.js. Features component library, real-time editing, backend API with Express.js, and MSSQL database for persistence. <a href="https://dragcanvasapp.netlify.app/">Live Demo →</a></div>
+            <div class="project-tech">
+                <span>React 19</span><span>Express.js</span><span>MSSQL</span><span>Craft.js</span><span>dnd-kit</span>
+            </div>
+            <div class="project-links">
+                <a href="https://dragcanvasapp.netlify.app/">Live Demo</a>
+                <a href="https://github.com/Yuravolontir/WebBuildReactExam">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CERTIFICATIONS & LANGUAGES -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <h2 class="section-title">Certifications &amp; Languages</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="extras-grid">
+            <div class="card">
+                <div class="card-title">Certifications</div>
+                <div class="cert-name">CCNA: Introduction to Networks</div>
+                <div class="cert-issuer">Cisco Networking Academy</div>
+                <span class="cert-badge">✓ Certified</span>
+            </div>
+            <div class="card">
+                <div class="card-title">Languages</div>
+                <ul class="lang-list">
+                    <li><span class="lang-name">Russian</span><span class="lang-level">Native</span></li>
+                    <li><span class="lang-name">Hebrew</span><span class="lang-level">Professional</span></li>
+                    <li><span class="lang-name">English</span><span class="lang-level">Professional</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
