@@ -57,7 +57,7 @@
     .skill-chip { font-size: 7.5pt; font-weight: 500; padding: 3px 8px; border-radius: 5px; background: #fbf9f8; border: 1px solid #dec0b9; color: #57423d; }
 
     /* PROJECTS */
-    .project-card { border: 1px solid #dec0b9; border-radius: 12px; padding: 20px 24px; page-break-inside: avoid; }
+    .project-card { border: 1px solid #dec0b9; border-radius: 12px; padding: 20px 24px; page-break-inside: avoid; margin-bottom: 12px; }
     .project-name { font-family: 'DM Serif Display', serif; font-size: 12pt; margin-bottom: 8px; }
     .project-name a { color: #1b1c1c; text-decoration: none; }
     .project-desc { color: #57423d; font-size: 9.5pt; line-height: 1.55; margin-bottom: 10px; }
@@ -209,13 +209,33 @@
         </div>
         <div class="project-card">
             <div class="project-name"><a href="https://github.com/Yuravolontir/WebBuildReactExam">Visual Website Builder</a></div>
-            <div class="project-desc">Full-stack drag-and-drop website builder with a visual editor powered by Craft.js. Features component library, real-time editing, backend API with Express.js, and MSSQL database for persistence. <a href="https://dragcanvasapp.netlify.app/">Live Demo →</a></div>
+            <div class="project-desc">Full-stack drag-and-drop website builder with a visual editor powered by Craft.js. Component library, real-time editing, Express.js backend, MSSQL persistence. <a href="https://dragcanvasapp.netlify.app/">Live Demo →</a></div>
             <div class="project-tech">
-                <span>React 19</span><span>Express.js</span><span>MSSQL</span><span>Craft.js</span><span>dnd-kit</span>
+                <span>React 19</span><span>Express.js</span><span>MSSQL</span><span>Craft.js</span>
             </div>
             <div class="project-links">
                 <a href="https://dragcanvasapp.netlify.app/">Live Demo</a>
                 <a href="https://github.com/Yuravolontir/WebBuildReactExam">Source Code</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-name"><a href="https://github.com/Yuravolontir/MyLibrary">MyLibrary</a></div>
+            <div class="project-desc">Desktop library management system with user authentication (SHA256), role-based access (admin/user), book CRUD, reading time tracker, and top readers leaderboard. SQL Server stored procedures for all DB operations.</div>
+            <div class="project-tech">
+                <span>C#</span><span>WinForms</span><span>SQL Server</span><span>Stored Procedures</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/Yuravolontir/MyLibrary">Source Code</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-name"><a href="https://github.com/Yuravolontir/Ai-Design-Asistant">AI Design Assistant</a></div>
+            <div class="project-desc">AI-powered design tool recommending color palettes and slogans based on project type and mood. Neural networks (brain.js) for color classification, LSTM for slogan generation.</div>
+            <div class="project-tech">
+                <span>JavaScript</span><span>brain.js</span><span>Neural Networks</span><span>LSTM</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/Yuravolontir/Ai-Design-Asistant">Source Code</a>
             </div>
         </div>
     </div>
